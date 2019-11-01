@@ -1,0 +1,48 @@
+---
+# tasks file for caasp_nfs_server_configuration
+
+- name: "create directory /caasp_data/"
+  file:
+    path: "/caasp_data/"
+    state: "directory"
+    owner: "0"
+    group: "0"
+    mode: "0755"
+  notify:
+    - "restart nfs-server"
+
+- name: "create directory /caasp_data/writable"
+  file:
+    path: "/caasp_data/writable"
+    state: "directory"
+    owner: "0"
+    group: "0"
+    mode: "0777"
+  notify:
+    - "restart nfs-server"
+
+- name: "create file /caasp_data/I_am_here_do_you_see_me.txt"
+  copy:
+    dest: "/caasp_data/I_am_here_do_you_see_me.txt"
+    content: "Hello?\n"
+    owner: "0"
+    group: "0"
+    mode: "0644"
+  notify:
+    - "restart nfs-server"
+
+- name: "create /etc/exports from template"
+  template:
+    src: "etc_exports.j2"
+    dest: "/etc/exports"
+    owner: "0"
+    group: "0"
+    mode: "0644"
+  notify:
+    - "restart nfs-server"
+
+- name: "start and enable nfs-server"
+  service:
+    name: "nfs-server"
+    state: "started"
+    enabled: true
