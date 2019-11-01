@@ -1,0 +1,13 @@
+galaxy_info:
+  role_name: 'caasp_nfs_server_configuration'
+  author: 'Johannes Kastl'
+  description: 'Configure a NFS server to share /caasp_data just to try this with SUSE CaaSP'
+  company: 'B1 Systems GmbH'
+
+  license: 'BSD-3-Clause'
+
+  min_ansible_version: 2.4
+
+  galaxy_tags: []
+
+dependencies: []
