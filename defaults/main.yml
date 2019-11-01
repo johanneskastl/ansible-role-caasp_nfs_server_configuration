@@ -1,0 +1,4 @@
+---
+# defaults file for caasp_nfs_server_configuration
+
+nfs_server_service: 'nfs-server.service'
