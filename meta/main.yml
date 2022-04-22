@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'caasp_nfs_server_configuration'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Configure a NFS server to share /caasp_data just to try this with SUSE CaaSP'
   company: 'B1 Systems GmbH'
