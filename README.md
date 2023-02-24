@@ -28,7 +28,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.caasp_nfs_server_configuration' }
+         - role: 'johanneskastl.caasp_nfs_server_configuration'
 
 License
 -------
