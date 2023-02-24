@@ -9,7 +9,7 @@
     group: "0"
     mode: "0755"
   notify:
-    - "restart nfs-server"
+    - "Restart nfs-server"
 
 - name: "create directory /caasp_data/writable"
   ansible.builtin.file:
@@ -19,7 +19,7 @@
     group: "0"
     mode: "0777"
   notify:
-    - "restart nfs-server"
+    - "Restart nfs-server"
 
 - name: "create file /caasp_data/I_am_here_do_you_see_me.txt"
   ansible.builtin.copy:
@@ -29,7 +29,7 @@
     group: "0"
     mode: "0644"
   notify:
-    - "restart nfs-server"
+    - "Restart nfs-server"
 
 - name: "create /etc/exports from template"
   ansible.builtin.template:
@@ -39,7 +39,7 @@
     group: "0"
     mode: "0644"
   notify:
-    - "restart nfs-server"
+    - "Restart nfs-server"
 
 - name: "start and enable nfs-server"
   ansible.builtin.service:

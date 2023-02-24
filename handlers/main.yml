@@ -1,7 +1,7 @@
 ---
 # handlers file for caasp_nfs_server_configuration
 
-- name: "restart nfs-server"
+- name: "Restart nfs-server"
   ansible.builtin.service:
     name: "{{ nfs_server_service }}"
     state: "restarted"
