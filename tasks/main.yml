@@ -1,7 +1,7 @@
 ---
 # tasks file for caasp_nfs_server_configuration
 
-- name: 'create directory /caasp_data/'
+- name: 'Create directory /caasp_data/'
   ansible.builtin.file:
     path: '/caasp_data/'
     state: 'directory'
@@ -11,7 +11,7 @@
   notify:
     - 'Restart nfs-server'
 
-- name: 'create directory /caasp_data/writable'
+- name: 'Create directory /caasp_data/writable'
   ansible.builtin.file:
     path: '/caasp_data/writable'
     state: 'directory'
@@ -21,7 +21,7 @@
   notify:
     - 'Restart nfs-server'
 
-- name: 'create file /caasp_data/I_am_here_do_you_see_me.txt'
+- name: 'Create file /caasp_data/I_am_here_do_you_see_me.txt'
   ansible.builtin.copy:
     dest: '/caasp_data/I_am_here_do_you_see_me.txt'
     content: 'Hello?\n'
@@ -31,7 +31,7 @@
   notify:
     - 'Restart nfs-server'
 
-- name: 'create /etc/exports from template'
+- name: 'Create /etc/exports from template'
   ansible.builtin.template:
     src: 'etc_exports.j2'
     dest: '/etc/exports'
@@ -41,7 +41,7 @@
   notify:
     - 'Restart nfs-server'
 
-- name: 'start and enable nfs-server'
+- name: 'Start and enable nfs-server'
   ansible.builtin.service:
     name: 'nfs-server'
     state: 'started'
